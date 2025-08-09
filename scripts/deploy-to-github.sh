@@ -110,38 +110,59 @@ EOF
 echo "📦 Adding files to git..."
 git add .
 
-# Create initial commit
-echo "💾 Creating initial commit..."
-git commit -m "🎉 Initial commit: Amrikyy AI - RAG-powered coding expert
+# Create enhanced commit
+echo "💾 Creating enhanced commit..."
+git commit -m "🚀 Enhanced Amrikyy AI v2.0 - Advanced RAG System + Smart Dashboard
 
-✨ Features:
-- Complete RAG pipeline with vector search
-- Advanced coding expertise knowledge base
-- Bilingual support (Arabic/English)
-- Personal AI assistant (محمد عبدالعزيز/Amrikyy)
-- Modern Next.js frontend with chat UI
-- FastAPI backend with async processing
-- Docker containerization
-- Production-ready deployment configs
+✨ New Features:
+- 📊 Quantum Smart Dashboard with real-time analytics
+- 🧠 Enhanced AI chatbot with smart suggestions
+- 🎯 AI mode selection (Chat, Code, Analyze) 
+- ⚡ Context-aware input suggestions
+- 📈 Real-time performance monitoring
+- 🔗 Professional LinkedIn integration
+- 💼 Updated professional bio and credentials
 
-🧠 Expertise Areas:
-- Advanced Algorithms & Data Structures
+🎛️ Smart Dashboard Features:
+- Real-time query and performance analytics
+- System health monitoring with live metrics
+- RAG accuracy and LLM usage tracking
+- Interactive data visualization
+- Export and analysis tools
+- Quantum-inspired UI design
+
+🤖 Enhanced Chatbot:
+- Smart contextual suggestions system
+- Multi-mode AI interactions (Chat/Code/Analyze)
+- Improved user experience with visual feedback
+- Dynamic placeholders and mode indicators
+- Enhanced message input with auto-suggestions
+
+👤 Professional Updates:
+- 🧠 AI x Web Dev (React, Firebase, LLMs)
+- 🔐 Cybersecurity @KSU | ✨ 2× Dean's List + Honor Society
+- 📈 Crypto Derivatives Trader | 🏛️ BlackRock Talent Community
+- 🔗 LinkedIn: https://www.linkedin.com/in/mohamed-abdelaziz-815797347/
+
+🛠️ Tech Stack Enhanced:
+- Frontend: Next.js 14, React 18, Tailwind CSS, Zustand
+- Backend: FastAPI, Python 3.11, SQLAlchemy, async/await
+- AI: OpenAI GPT-4o, RAG pipeline, Vector embeddings
+- Database: PostgreSQL, Redis, Pinecone/Weaviate
+- Analytics: Real-time dashboard, performance monitoring
+- Deployment: Docker, GitHub Actions, Multi-platform support
+
+🧠 Advanced Expertise Areas:
+- AI & Machine Learning (LLMs, RAG systems)
+- Web Development (React, Firebase, Next.js)
+- Cybersecurity & Network Security
+- Crypto Trading & Financial Technology
 - Software Architecture & Design Patterns
 - Clean Code & SOLID Principles
-- Microservices & Distributed Systems
-- Performance Optimization
-- Test-Driven Development
-- Event Sourcing & CQRS
-- Concurrency & Async Programming
+- Performance Optimization & Analytics
+- Real-time Systems & Data Visualization
 
-🛠️ Tech Stack:
-- Frontend: Next.js 14, React 18, Tailwind CSS
-- Backend: FastAPI, Python 3.11, SQLAlchemy
-- AI: OpenAI GPT-4, Vector embeddings
-- Database: PostgreSQL, Redis, Pinecone/Weaviate
-- Deployment: Docker, GitHub Actions, Nginx
-
-Created by محمد عبدالعزيز (Amrikyy) - Technology Expert & AI Developer"
+Created by محمد عبدالعزيز (Amrikyy) - AI & Web Development Expert"
 
 # Push to GitHub
 echo "🚀 Pushing to GitHub repository..."

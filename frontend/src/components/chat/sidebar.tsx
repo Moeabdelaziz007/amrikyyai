@@ -8,7 +8,9 @@ import {
   Settings, 
   Upload,
   History,
-  Search
+  Search,
+  BarChart3,
+  ExternalLink
 } from 'lucide-react'
 import { useChatStore } from '@/store/chat-store'
 
@@ -70,6 +72,15 @@ export function Sidebar() {
 
       {/* Footer Actions */}
       <div className="p-4 border-t border-border space-y-2">
+        <Button 
+          variant="ghost" 
+          className="w-full justify-start gap-2"
+          onClick={() => window.open('/dashboard', '_blank')}
+        >
+          <BarChart3 className="w-4 h-4" />
+          لوحة التحكم الذكية
+          <ExternalLink className="w-3 h-3 ml-auto" />
+        </Button>
         <Button variant="ghost" className="w-full justify-start gap-2">
           <Upload className="w-4 h-4" />
           رفع ملفات
