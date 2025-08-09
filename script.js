@@ -286,8 +286,8 @@ function renderMessage(message) {
     messageDiv.className = `message ${message.role}`;
     
     const avatar = message.role === 'user' ? 
-        '<i class="fas fa-user"></i>' : 
-        '<i class="fas fa-brain"></i>';
+        'U' : 
+        'AI';
     
     const sourcesHtml = message.sources ? 
         `<div class="sources-badge">
@@ -296,14 +296,11 @@ function renderMessage(message) {
         </div>` : '';
     
     messageDiv.innerHTML = `
-        <div class="message-avatar">${avatar}</div>
         <div class="message-content">
+            <div class="message-avatar">${avatar}</div>
             <div class="message-bubble">
                 ${formatMessage(message.content)}
-            </div>
-            ${sourcesHtml}
-            <div class="message-time">
-                ${formatTime(message.timestamp)}
+                ${sourcesHtml}
             </div>
         </div>
     `;
