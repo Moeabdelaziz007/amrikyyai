@@ -6,57 +6,54 @@
 }
 
 :root {
-    /* ChatGPT-like color scheme */
-    --primary-color: #10a37f;
-    --primary-hover: #0d9b71;
-    --primary-dark: #0b8260;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f7f7f8;
-    --bg-chat: #ffffff;
-    --bg-sidebar: #f7f7f8;
-    --bg-user: #f7f7f8;
-    --bg-assistant: #ffffff;
-    --text-primary: #343541;
-    --text-secondary: #565869;
+    /* Exact ChatGPT colors */
+    --bg-primary: #171717;
+    --bg-secondary: #212121;
+    --bg-chat: #212121;
+    --bg-sidebar: #171717;
+    --bg-user: #2f2f2f;
+    --bg-assistant: #212121;
+    --text-primary: #ececec;
+    --text-secondary: #c5c5d2;
     --text-muted: #8e8ea0;
-    --border-color: #e5e5e6;
-    --border-light: #ececf1;
-    --hover-color: #f5f5f5;
-    --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
-    --shadow-medium: 0 4px 12px rgba(0,0,0,0.15);
-    --radius: 6px;
-    --radius-lg: 12px;
+    --border-color: #4d4d4f;
+    --border-light: #4d4d4f;
+    --hover-color: rgba(255,255,255,0.05);
+    --primary-color: #19c37d;
+    --primary-hover: #0ea472;
+    --disabled-color: #6f6f70;
+    --shadow: 0 2px 8px rgba(0,0,0,0.3);
+    --radius: 8px;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    background-color: var(--bg-secondary);
+    font-family: "Söhne", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.5;
-    direction: rtl;
     font-size: 14px;
+    margin: 0;
+    overflow: hidden;
 }
 
 .app-container {
     height: 100vh;
     display: flex;
-    background: var(--bg-secondary);
+    background: var(--bg-primary);
 }
 
-/* Remove header - ChatGPT style has no header */
-
-/* Sidebar - ChatGPT Style */
+/* Real ChatGPT Sidebar */
 .sidebar {
     width: 260px;
     background: var(--bg-sidebar);
     display: flex;
     flex-direction: column;
-    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
     position: relative;
 }
 
 .sidebar-header {
-    padding: 12px;
+    padding: 8px;
 }
 
 .new-chat-btn {
@@ -64,16 +61,16 @@ body {
     background: transparent;
     color: var(--text-primary);
     border: 1px solid var(--border-color);
-    padding: 12px;
+    padding: 10px 12px;
     border-radius: var(--radius);
     cursor: pointer;
     font-size: 14px;
-    font-weight: 500;
-    transition: all 0.1s ease;
+    font-weight: 400;
+    transition: background-color 0.1s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    gap: 10px;
+    text-align: left;
 }
 
 .new-chat-btn:hover {
@@ -82,15 +79,15 @@ body {
 
 .chat-history {
     flex: 1;
-    padding: 8px 12px;
+    padding: 8px;
     overflow-y: auto;
 }
 
 .chat-history h3 {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-muted);
-    margin-bottom: 8px;
-    font-weight: 500;
+    margin: 16px 8px 8px 8px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -98,18 +95,21 @@ body {
 .chat-list {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
 }
 
 .chat-item {
-    padding: 12px;
+    padding: 8px;
     background: transparent;
     border-radius: var(--radius);
     cursor: pointer;
     transition: background-color 0.1s ease;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .chat-item:hover {
@@ -117,8 +117,8 @@ body {
 }
 
 .chat-item.active {
-    background: var(--primary-color);
-    color: white;
+    background: var(--bg-user);
+    color: var(--text-primary);
 }
 
 .sidebar-footer {
@@ -138,7 +138,7 @@ body {
     font-weight: 600;
 }
 
-/* Chat Area - ChatGPT Style */
+/* Real ChatGPT Chat Area */
 .chat-area {
     flex: 1;
     display: flex;
@@ -152,7 +152,6 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 /* Welcome Screen */
@@ -272,11 +271,9 @@ body {
     transform: translateY(-2px);
 }
 
-/* Messages - ChatGPT Style */
+/* Real ChatGPT Messages */
 .messages-container {
     width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
     padding: 0;
 }
 
@@ -287,8 +284,7 @@ body {
 
 .message {
     width: 100%;
-    border-bottom: 1px solid var(--border-light);
-    animation: messageSlideIn 0.2s ease-out;
+    padding: 0;
 }
 
 .message.user {
@@ -302,38 +298,40 @@ body {
 .message-content {
     max-width: 768px;
     margin: 0 auto;
-    padding: 24px;
+    padding: 20px;
     display: flex;
     gap: 16px;
 }
 
 .message-avatar {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .message.user .message-avatar {
     background: var(--primary-color);
-    color: white;
+    color: #000;
 }
 
 .message.assistant .message-avatar {
     background: var(--primary-color);
-    color: white;
+    color: #000;
 }
 
 .message-bubble {
     flex: 1;
-    line-height: 1.6;
+    line-height: 1.75;
     font-size: 16px;
     color: var(--text-primary);
+    word-wrap: break-word;
 }
 
 .message-time {
@@ -358,11 +356,10 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Input Area - ChatGPT Style */
+/* Real ChatGPT Input Area */
 .input-area {
-    padding: 12px;
+    padding: 20px;
     background: var(--bg-chat);
-    border-top: 1px solid var(--border-light);
 }
 
 .input-container {
@@ -371,17 +368,16 @@ body {
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    padding: 12px 16px;
+    border-radius: 12px;
+    padding: 12px;
     transition: border-color 0.1s ease;
-    box-shadow: var(--shadow-light);
+    position: relative;
 }
 
 .input-container:focus-within {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.1);
+    border-color: var(--text-muted);
 }
 
 .attach-btn {
@@ -406,32 +402,34 @@ body {
     background: transparent;
     resize: none;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 16px;
     color: var(--text-primary);
-    max-height: 120px;
+    max-height: 200px;
+    min-height: 24px;
+    line-height: 1.5;
 }
 
 #messageInput::placeholder {
-    color: var(--text-secondary);
+    color: var(--text-muted);
 }
 
 .send-btn {
-    background: var(--text-muted);
-    color: white;
+    background: var(--disabled-color);
+    color: var(--text-primary);
     border: none;
     width: 32px;
     height: 32px;
-    border-radius: var(--radius);
+    border-radius: 6px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.1s ease;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .send-btn:hover:not(:disabled) {
-    background: var(--text-secondary);
+    background: var(--text-muted);
 }
 
 .send-btn:not(:disabled) {
