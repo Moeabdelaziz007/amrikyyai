@@ -8,7 +8,13 @@ const nextConfig = {
   },
   images: {
     domains: ['localhost'],
+    unoptimized: true,
   },
+  // GitHub Pages configuration
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/amrikyyai' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/amrikyyai/' : '',
 }
 
 module.exports = nextConfig
